@@ -1,0 +1,1492 @@
+/* GLOBAL STYLES */
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #111;
+}
+
+.back {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
+  color: #111;
+  font-size: 28px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 4px 8px;
+  cursor: pointer;
+  left: 16px;
+  line-height: 1;
+  border-radius: 10px;
+}
+
+/* removes blue/black focus ring when clicked */
+.back:focus,
+.back:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.back:active,
+.back:visited,
+.back:hover {
+  color: #111;             /* keeps color consistent on click, hover, visited */
+  text-decoration: none;
+}
+
+
+.app {
+  max-width: 430px;
+  width: 100%;
+      height: 100%;
+  margin: 0 auto;
+  background: #fff;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+
+/* HEADER */
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center all children */
+  position: relative;      /* needed for back button absolute positioning */
+  height: 56px;
+  padding: 0 16px;
+  border-bottom: 1px solid #eee;
+  padding-top: env(safe-area-inset-top);
+  height: calc(56px + env(safe-area-inset-top));
+}
+
+.top-header .title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.top-header .back {
+  position: absolute;      /* place back button independently on the left */
+  left: 16px;
+  font-size: 28px;
+}
+
+
+/* REFRESH */
+.refresh {
+  text-align: center;
+  font-size: 13px;
+  color: #8b8b8b;
+  padding: 10px 0;
+}
+
+/* LICENCE BAR */
+.licence-bar {
+  display: flex;
+  justify-content: space-between; /* text left, logo right */
+  align-items: center;            /* vertical center */
+  padding: 16px;
+  background: #d32f2f;
+  color: white;
+}
+
+.licence-text {
+  display: flex;
+  flex-direction: column;         /* stack title + subtitle */
+  justify-content: center;        /* vertical center in flex */
+}
+
+.licence-title {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.licence-sub {
+  font-size: 12px;
+  margin-top: 2px; /* slight spacing between lines */
+}
+
+.logo img {
+  height: 22px;                /* perfectly matches text height */
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* makes it white */
+}
+
+/* IMAGE SECTION */
+.image-section {
+  width: 100%;
+}
+
+.image-section img {
+  width: 100%;
+  display: block;
+}
+
+/* TABS */
+.segmented {
+  display: flex;          /* 👈 change from inline-flex */
+  width: fit-content;     /* keeps pill tight */
+  margin: 16px auto 0;    /* centers */
+  background: #ffffff;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+}
+
+.licence-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.segmented button {
+      border: none;
+      background: transparent;
+      padding: 5px 42px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #1f2937;
+      transition: all 0.2s ease;
+    }
+
+    .segmented button.active {
+      background: #1f3b63;
+      color: white;
+    }
+
+button.active {
+  background-color: black;
+  color: white;
+}
+
+
+/* DETAILS */
+.details {
+  padding: 0 16px 24px;
+}
+
+.details h2 {
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.row{
+  display:flex;
+  justify-content:flex-start; /* don't push to far right */
+  gap: 62px;                  /* controls how "middle" the right column is */
+  margin-bottom: 24px;
+}
+
+.row > div{
+  width: 150px;               /* makes both columns consistent */
+}
+
+
+.row span {
+  font-size: 12px;
+  color: #8b8b8b;
+}
+
+.row strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.badge {
+  display: inline-flex;             /* inline-block + flex centering */
+  align-items: center;              /* vertically center image */
+  justify-content: center;          /* horizontally center image */
+  background-color: #DE3424;        /* same red as Tailwind example */
+  padding: 2px 6px;                 /* approximate px-1.5 py-0.5 in Tailwind */
+  font-size: 0.75rem;               /* text-xs equivalent, fallback if image missing */
+  font-weight: 700;                  /* bold, for fallback text */
+  line-height: 1;                    /* centers content vertically */
+}
+
+.badge-image {
+  height: 0.75rem;                  /* matches text-xs (12px) */
+  width: auto;                       /* preserve aspect ratio */
+  display: block;
+}
+
+
+
+h3 {
+  margin-top: 28px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+}
+
+.single {
+  margin-bottom: 24px;
+}
+
+.single span {
+  font-size: 12px;
+  color: #8b8b8b;
+}
+
+.single strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.muted {
+  color: #8b8b8b;
+}
+
+.pill {
+  background: #e5e7eb;
+  color: #333;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 6px;
+}
+
+.barcode {
+  margin-top: 8px;
+  height: 48px;
+  background: repeating-linear-gradient(
+    90deg,
+    #000,
+    #000 2px,
+    #fff 2px,
+    #fff 4px
+  );
+  border-radius: 4px;
+}
+
+.divider {
+  height: 1px;
+  background: #d1d5db;
+  margin: 12px 0 16px;
+  border-radius: 1px;
+}
+
+/* GRID-2 STACKED */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr; /* single column */
+  gap: 16px;                  /* vertical spacing */
+}
+
+.cell span {
+  font-size: 12px;
+  color: #8b8b8b;
+}
+
+.cell strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.section-banner {
+  position: relative;
+  margin: 24px -16px 12px;       /* negative horizontal margin to stretch full width of container */
+  background-color: #E8EAF0;   /* light gray-blue background */
+  padding: 8px 16px;           /* vertical and horizontal padding */
+  border-radius: 4px;          /* optional: slightly rounded corners */
+}
+
+.section-banner h3 {
+  margin: 0;                   /* remove default margin */
+  font-size: 0.875rem;         /* text-sm in Tailwind (14px) */
+  font-weight: 600;             /* semibold */
+  color: #5B6B7C;              /* muted dark gray-blue text */
+}
+.signature-image {
+  width: auto;           /* do not stretch full width */
+  max-width: 200px;      /* adjust to desired width */
+  height: auto;          /* maintain aspect ratio */
+  display: block;
+  margin-top: 4px;       /* spacing below the label */
+  object-fit: contain;   /* keeps proportions */
+}
+
+.car-permit {
+  font-weight: 600;              /* semibold */
+  color: #111;                   /* dark text (similar to text-gray-900) */
+  display: flex;                 /* flex container to align text + badge */
+  align-items: center;           /* vertically center badge with text */
+  gap: 4px;                      /* space between text and badge */
+  margin: 0;                     /* remove default margin if needed */
+}
+
+.permit-badge {
+  display: inline-flex;          /* center contents inside badge */
+  align-items: center;
+  justify-content: center;
+  padding: 2px 1px;              /* px-1.5 py-0.5 equivalent */          /* slightly rounded corners */
+}
+
+.permit-icon {
+  width: 24px;                   /* roughly text-xs size */
+  height: 24px;
+  object-fit: contain;           /* maintain image proportions */
+  display: block;
+}
+
+.status-tick {
+  width: 24px;            /* adjust to match text height */
+  height: 24px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle; /* aligns tick with text baseline */
+  margin-right: 4px;      /* space between tick and "Current" */
+}
+
+.proficiency-logo {
+  width: 24px;             /* match text height */
+  height: 24px;            
+  object-fit: contain;     
+  display: inline-block;    
+  vertical-align: middle;  /* aligns image with text baseline */
+  margin-right: 4px;       /* spacing between logo and text */
+}
+
+.a-logo {
+  width: 35px;             /* match text height */
+  height: 15px;            
+  object-fit: contain;     
+  display: inline-block;    
+  vertical-align: middle;  /* aligns image with text baseline */
+  margin-right: 4px;       /* spacing between logo and text */
+}
+
+.ass-icon {
+  width: 111px;                   /* roughly text-xs size */
+  height: 24px;
+  object-fit: contain;           /* maintain image proportions */
+  display: block;
+}
+
+.barcode-logo {
+    width: 400px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.card-number-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.eye-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.eye-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+.eye-btn:active .eye-icon {
+  opacity: 0.5;
+}
+
+.content,
+.details {
+  padding-bottom: calc(96px + env(safe-area-inset-bottom));
+}
+
+.qr-wrap{
+  position: relative;
+}
+
+.qr-hotspot{
+  position: absolute;
+
+  /* 👇 move these until it sits on top of the screenshot button */
+  left: 57.5%;
+  top: 70%;
+  width: 32%;
+  height: 14%;
+
+  background: transparent; /* invisible */
+  border: none;
+  cursor: pointer;
+
+  /* stops blue highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
+
+  /* hide text (but keeps accessibility) */
+  color: transparent;
+}
+
+.inline-strong {
+  display: inline-flex;
+  align-items: center;   /* moves Car UP */
+  gap: 6px;
+  line-height: 1;
+}
+
+
+ /* add shit here */
+
+ #age .age-label {
+  font-size: 12px;
+  color: #8b8b8b;
+  padding: 18px 16px 10px;
+}
+
+#age .age-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px 18px;
+}
+
+#age .age-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #2fb344;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+#age .age-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+}
+
+
+
+/* HOMEPAGE */
+
+* * #homepage {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#homepage body {
+  margin: 0;
+  background: #e9eff3;
+  display: flex;
+  justify-content: center;
+}
+
+/* PHONE CONTAINER */
+#homepage .app {
+  max-width: 430px;
+  width: 100%;
+      height: 100%;
+  background: #eef3f6;
+  position: relative; /* important for absolute positioning */
+  overflow: hidden;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* CONTENT */
+#homepage .content {
+  padding: 20px 16px 120px;
+}
+
+/* HEADER */
+#homepage .header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+#homepage .check {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid #1abc9c;
+  color: #1abc9c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+#homepage .header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* BUTTON CARDS */
+#homepage .card {
+  background: white;
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+#homepage .icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #eaf7f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* LICENCE BUTTON */
+#homepage .licence-link {
+  position: absolute;
+  bottom: -5px;         /* distance above nav; change this for spacing */
+  left: 0;
+  right: 0;
+  display: flex;         /* centers the image */
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  }
+
+#homepage .licence-btn {
+  width: calc(100% - 32px); /* full width minus some padding */
+  max-width: 390px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  transition: transform 0.1s ease-in-out;
+}
+
+#homepage.licence-btn:active {
+  transform: scale(0.99);
+}
+
+/* BOTTOM NAV */
+#homepage .nav {
+  position: absolute;   /* inside phone */
+  bottom: 0;            /* flush at bottom */
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: white;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;             /* push nav up */
+  width: 100%;
+}
+
+#homepage .nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #666;
+  font-size: 11px;
+}
+
+#homepage .nav a.active {
+  color: #111;      /* dark/black text for active page */
+  font-weight: 600;
+}
+
+#homepage .nav-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 4px;
+}
+
+#homepage .demerit-card {
+  display: flex;
+  flex-direction: column;       
+  align-items: flex-start;      
+  background: white;            
+  border-radius: 16px;          
+  padding: 18px;                
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06); 
+  gap: 8px;                     
+  width: 100%;                  
+  max-width: 360px;             
+  margin-bottom: 14px;          
+  box-sizing: border-box;
+
+  /* NEW: move the card to the right */
+  margin-left: 20px;   /* shifts the whole card 20px right */
+}
+
+
+#homepage .demerit-img {
+  width: 48px;                 /* same as Tailwind w-12 */
+  height: 48px;                /* same as Tailwind h-12 */
+  object-fit: contain;         /* keeps proportions */
+}
+
+#homepage .demerit-text {
+  font-size: 1.125rem;         /* ~18px, similar to text-lg */
+  font-weight: 600;             /* bold */
+  color: #2D3E50;
+  margin: 0px;
+  margin-left: 4px;
+  margin-bottom: 2px;
+  text-align: left;
+}
+
+#homepage .vehicle-card {
+  display: flex;
+  flex-direction: column;       
+  align-items: flex-start;      
+  background: white;            
+  border-radius: 16px;          
+  padding: 18px;                
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06); 
+  gap: 8px;                     
+  width: 100%;                  
+  max-width: 360px;             
+  margin-bottom: 14px;          
+  box-sizing: border-box;
+
+  /* NEW: move the card to the right */
+  margin-left: 20px;  
+}
+
+#homepage .vehicle-img {
+  width: 48px;                 /* same as Demerit Points card */
+  height: 48px;
+  object-fit: contain;
+}
+
+#homepage .vehicle-text {
+  font-size: 1.125rem;         /* ~18px */
+  font-weight: 600;
+  color: #2D3E50;
+  margin: 0;
+  text-align: left;
+}
+
+#homepage .header img.header-img {
+  width: 48px;      /* adjust width */
+  height: 48px;     /* adjust height */
+  object-fit: contain;  /* keeps aspect ratio */
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+/* demerit page */
+
+ * #demerit { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background: #ffffff; color: #111; }
+
+    /* phone frame */
+    #demerit .app {
+      min-height: 100vh;
+      max-width: 430px;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* top header */
+    #demerit .top-header{
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-bottom: 1px solid #eee;
+      padding: 0 16px;
+    }
+    #demerit .top-header .title{
+      font-weight: 600;
+      font-size: 18px;
+    }
+    #demerit .top-header .back {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
+  color: #111;
+  font-size: 28px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 4px 8px;
+  cursor: pointer;
+  left: 16px;
+  line-height: 1;
+  border-radius: 10px;
+}
+
+/* removes blue/black focus ring when clicked */
+.back:focus,
+.back:active {
+  outline: none;
+  box-shadow: none;
+}
+
+    #demerit .top-header .back:active{ background: rgba(0,0,0,0.06); }
+
+    /* page content */
+    #demerit .content{
+      padding: 18px 16px 24px;
+    }
+
+    /* green balance card */
+    #demerit .balance-card{
+      background: #49ad3a; /* close to screenshot */
+      border-radius: 14px;
+      padding: 18px;
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+      margin-bottom: 16px;
+    }
+    #demerit .balance-title{
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0.95;
+      margin-bottom: 10px;
+    }
+    #demerit .balance-row{
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    #demerit .balance-big{
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    #demerit .balance-outof{
+      font-size: 22px;
+      font-weight: 500;
+      opacity: 0.95;
+    }
+    #demerit .balance-sub{
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+
+    /* info cards */
+    #demerit .card{
+      background: #f2f4f7;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+    #demerit .card.white{
+      background: #fff;
+      border: 1px solid #e6e9ee;
+    }
+    #demerit .card-title{
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    #demerit .card-text{
+      font-size: 14px;
+      line-height: 1.5;
+      color: #374151;
+    }
+
+
+
+
+/*vehicle page */
+
+     * #vehicle {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #vehicle body {
+      background: #ffffff;
+      color: #111;
+    }
+
+    /* phone container */
+    #vehicle .app {
+      min-height: 100vh;
+      max-width: 430px;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* header */
+    #vehicle .top-header {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-bottom: 1px solid #eee;
+      padding: 0 16px;
+    }
+
+    #vehicle .top-header .title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    #vehicle .top-header .back {
+      position: absolute;
+      left: 16px;
+      text-decoration: none;
+      color: #111;
+      font-size: 26px;
+      line-height: 1;
+      padding: 6px 8px;
+      border-radius: 10px;
+    }
+
+    #vehicle .top-header .back:active {
+      background: rgba(0,0,0,0.06);
+    }
+
+    /* empty state */
+    #vehicle .empty {
+      height: calc(100vh - 56px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    #vehicle .icon-circle {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: #eaf7ea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    #vehicle .icon-circle img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+    }
+
+    #vehicle .empty h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    #vehicle .empty p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #6b7280;
+      max-width: 260px;
+    }
+    
+    #vehicle .icon-circle {
+  background: transparent;   /* removes green circle */
+}
+
+
+
+
+
+
+
+
+
+
+/* vehicles menu page  */
+
+
+* #vehicles {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #vehicles body {
+      background: #f2f4f7;
+      color: #111;
+    }
+
+    #vehicles .app {
+      min-height: 100vh;
+      max-width: 430px;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      background: #f2f4f7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    #vehicles .top-header {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    #vehicles .top-header .title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* LIST */
+    #vehicles .list {
+      padding: 16px;
+    }
+
+    #vehicles .list-item {
+      background: #fff;
+      border-radius: 16px;
+      padding: 13px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    #vehicles .list-text h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    #vehicles .list-text p {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    #vehicles .external {
+      width: 18px;
+      height: 18px;
+      opacity: 0.6;
+    }
+
+    #vehicles .list-item:active {
+      background: #f9fafb;
+    }
+
+    /* BOTTOM NAV (same as home) */
+    #vehicles .nav {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 80px;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    #vehicles .nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    #vehicles .nav a.active {
+      color: #111;
+      font-weight: 600;
+    }
+
+    #vehicles .nav-icon {
+      width: 26px;
+      height: 26px;
+      display: block;
+      margin: 0 auto 4px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* payment page */
+
+    * #payment {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #payment body {
+      background: #f2f4f7;
+      color: #111;
+    }
+
+    #payment .app {
+      min-height: 100vh;
+      max-width: 430px;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      background: #f2f4f7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    #payment .top-header {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    #payment .top-header .title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* CONTENT */
+    #payment .content {
+      padding: 16px;
+    }
+
+    #payment .card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    #payment .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #payment .item + .item {
+      border-top: 1px solid #eef0f3;
+    }
+
+    #payment .item-text h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    #payment .item-text p {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.4;
+    }
+
+    #payment .external {
+      width: 18px;
+      height: 18px;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    #payment .item:active {
+      background: #f9fafb;
+    }
+
+    /* BOTTOM NAV */
+    #payment .nav {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 80px;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    #payment .nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    #payment .nav a.active {
+      color: #111;
+      font-weight: 600;
+    }
+
+    #payment .nav-icon {
+      width: 26px;
+      height: 26px;
+      display: block;
+      margin: 0 auto 4px;
+    }
+
+
+
+
+
+
+
+
+/* profile page */
+
+
+     * #profile {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #profile body {
+      background: #f2f4f7;
+      color: #111;
+    }
+
+    #profile .app {
+      min-height: 100vh;
+      max-width: 430px;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      background: #f2f4f7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    #profile .top-header {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    #profile .top-header .title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* CONTENT */
+    #profile .content {
+      padding: 16px;
+      padding-bottom: 100px;
+    }
+
+    #profile .section {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    #profile .section-header {
+      padding: 16px;
+      font-size: 15px;
+      font-weight: 700;
+      border-bottom: 1px solid #eef0f3;
+    }
+
+    #profile .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      text-decoration: none;
+      color: inherit;
+      font-size: 14px;
+    }
+
+    #profile .item + .item {
+      border-top: 1px solid #eef0f3;
+    }
+
+    #profile .item p {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+
+    #profile .chevron {
+      width: 18px;
+      height: 18px;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    #profile .item:active {
+      background: #f9fafb;
+    }
+
+    /* BOTTOM NAV */
+    #profile .nav {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 80px;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    #profile .nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    #profile .nav a.active {
+      color: #111;
+      font-weight: 600;
+    }
+
+    #profile .nav-icon {
+      width: 26px;
+      height: 26px;
+      display: block;
+      margin: 0 auto 4px;
+    }
+
+
+
+
+
+
+
+
+/* qr page */
+
+
+    * #qr {box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    #qr body{background:#fff;color:#111}
+
+    #qr .app{max-width:430px;margin:0 auto;min-height:100vh;min-height:100dvh;background:#fff}
+
+    /* top bar */
+    #qr .top{
+      height:56px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-bottom:1px solid #e5e7eb;
+      position:relative;
+      padding:0 16px;
+      background:#fff;
+    }
+    #qr .top .title{font-size:16px;font-weight:600}
+
+    #qr .close{
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  text-decoration: none;
+  color: #111;
+  font-size: 15px;
+  font-weight: 500;
+
+  padding: 6px 10px;
+  border-radius: 10px;
+
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+    #qr .close:active{background:rgba(0,0,0,0.06)}
+
+    /* content */
+    #qr .content{padding:18px 16px 28px}
+
+    #qr .qr-wrap{
+      display:flex;
+      justify-content:center;
+      margin:8px 0 18px;
+    }
+
+    #qr .qr{
+      width:min(340px, 92%);
+      aspect-ratio:1/1;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      overflow:hidden;
+      position:relative;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    #qr .qr img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+
+  filter: blur(6px);
+}
+
+#qr .qr.unblur img {
+  filter: blur(0px);
+}
+
+    /* overlay blur + fade */
+    #qr .overlay {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+
+  opacity:1;
+  transition: opacity 0.6s ease;
+}
+
+#qr .overlay.hide {
+  opacity:0;
+  pointer-events:none;
+}
+
+    /* green circle */
+    #qr .loader{
+      width:110px;
+      height:110px;
+      background:#2e7d1f;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* white spinning arc */
+    #qr .loader::after{
+      content:"";
+      width:50px;
+      height:50px;
+      border:6px solid rgba(255,255,255,0.7);
+      border-top:6px solid transparent;
+      border-radius:50%;
+      animation:spin 1s linear infinite;
+    }
+
+    @keyframes spin{
+      to{transform:rotate(360deg);}
+    }
+
+    #qr .expires{
+      text-align:center;
+      font-size:18px;
+      font-weight:800;
+      margin:8px 0 18px;
+    }
+
+    #qr .desc{
+      color:#4b5563;
+      font-size:13px;
+      line-height:1.5;
+      margin-bottom:18px;
+    }
+
+    #qr .sharing-title{
+      font-size:13px;
+      font-weight:800;
+      margin:10px 0 10px;
+    }
+
+    #qr ul{
+      padding-left:18px;
+      color:#374151;
+      font-size:13px;
+      line-height:1.6;
+    }
+    #qr li{margin:6px 0}
+
+    #qr .expires{
+  text-align:center;
+  font-size:18px;
+  font-weight:800;
+  margin:8px 0 18px;
+
+  opacity:0;              /* hidden at start */
+  transition:opacity 0.4s ease;
+}

@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Show Page Example</title>
+ <link rel="stylesheet" href="styles.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+
+  <div id="home" class="page">
+    <div class="app">
+
+  <!-- HEADER -->
+  <header class="top-header">
+    <button class="back" onclick="showPage('homepage')">‹</button>
+    <div class="title">View details</div>
+  </header>
+
+ <div class="refresh lastRefreshed"></div>
+
+
+  <!-- RED LICENCE BAR -->
+  <div class="licence-bar">
+  <div>
+    <div class="licence-title">PROBATIONARY DRIVER LICENCE</div>
+    <div class="licence-sub">Victoria Australia</div>
+  </div>
+  <!-- Replace text with image -->
+  <div class="logo">
+    <img src="b7be7c363_image (1),.png" alt="Vicroads Logo" />
+  </div>
+</div>
+
+  <!-- IMAGE SECTION (REPLACES GREEN BACKGROUND) -->
+  <div class="image-section qr-wrap">
+  <img src="verityphoto.png" alt="Licence QR Section">
+
+  <!-- clickable area on top of the screenshot button -->
+  <button class="qr-hotspot" onclick="showPage('qr')">
+  Reveal QR code
+</button>
+</div>
+
+
+ <div class="segmented">
+
+  <button class="active" onclick="showPage('home')">Permit</button>
+
+ <button onclick="showPage('identity')">Identity</button>
+
+  <button onclick="showPage('age')">Age</button>
+  </a>
+</div>
+
+  <!-- DETAILS -->
+  <div class="details">
+
+  <h2>VERITY L WEETMAN</h2>
+
+  <div class="divider"></div>
+
+
+  <!-- BASIC DETAILS -->
+  <div class="row">
+    <div>
+      <span>Permit number</span>
+      <strong>059481231</strong>
+    </div>
+    <div>
+      <span>Expiry</span>
+      <strong>20 May 2035</strong>
+    </div>
+  </div>
+
+    <div class="row">
+    <div>
+      <span>Permit type</span>
+    <p class="car-permit">
+  Car 
+  <span class="permit-badge">
+    <img src="pppp.png" alt="Permit Icon" class="permit-icon" />
+  </span>
+</p>
+
+
+
+    </div>
+    <div>
+      <span>Date of birth</span>
+      <strong>16 May 2008</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="single">
+    <span>Address</span>
+    <strong>20 LILIAN COURT</strong>
+    <strong>BEAUMARIS VIC 3193</strong>
+  </div>
+
+<div class="divider"></div>
+
+
+  <div class="single">
+  <span>Signature</span>
+  <img src="veritysign.jpg" alt="Driver Signature" class="signature-image" />
+</div>
+
+
+  <!-- SECTION -->
+  <div class="section-banner">
+  <h3>Car learner permit details</h3>
+</div>
+
+
+<div class="grid-2">
+  <div class="cell">
+  <span>Permit status</span>
+  <strong>
+    <img src="Tick.png" alt="Tick" class="status-tick" />
+    Current
+  </strong>
+</div>
+
+
+  <div class="cell">
+  <span>Proficiency</span>
+  <strong>
+    <img src="ppp.png" alt="Permit Icon" class="proficiency-logo" />
+    P1
+  </strong>
+</div>
+
+  <div class="cell">
+    <span>Issue date</span>
+    <strong>20 May 2025</strong>
+  </div>
+
+  <div class="cell">
+    <span>P1 end date</span>
+    <strong>19 May 2026</strong>
+  </div>
+  
+  <div class="cell">
+    <span>Expiry</span>
+    <strong>20 May 2035</strong>
+  </div>
+</div>
+
+  <!-- SECTION -->
+   <div class="section-banner">
+    <h3>Other details</h3>
+   </div>
+
+  <div class="cell">
+  <span>Conditions</span>
+  <strong>
+    <img src="a.png" alt="ass-Icon" class="a-logo" />
+    Automatic transmission - (car)
+  </strong>
+</div>
+  
+  <div class="divider"></div>
+
+  <div class="single card-number-row">
+  <span>Card number</span>
+
+  <div class="card-number-wrapper">
+    <strong id="cardNumber" data-real="P4999649">
+      ••••••••••••
+    </strong>
+
+    <button class="eye-btn" id="toggleEye" type="button">
+      <img
+        src="close.png"
+        class="eye-icon"
+        id="eyeIcon"
+        alt="Hide card number"
+      >
+    </button>
+  </div>
+</div>
+
+
+  <div class="divider"></div>
+
+  <div class="single">
+    <span>Victoria Police barcode</span>
+    <img src="barcode.png" class="barcode-logo"/>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Identity page -->
+
+
+  <div id="identity" class="page">
+    <div class="app">
+
+    <header class="top-header">
+      <button class="back" onclick="showPage('homepage')">‹</button>
+      <div class="title">View details</div>
+    </header>
+
+    <div class="refresh lastRefreshed"></div>
+
+    <div class="licence-bar">
+      <div>
+        <div class="licence-title">PROBATIONARY DRIVER LICENCE</div>
+        <div class="licence-sub">Victoria Australia</div>
+      </div>
+      <div class="logo">
+        <img src="b7be7c363_image (1),.png" alt="Vicroads Logo" />
+      </div>
+    </div>
+
+   <div class="image-section qr-wrap">
+  <img src="verityphoto.png" alt="Licence QR Section">
+
+  <!-- clickable area on top of the screenshot button -->
+ <button class="qr-hotspot" onclick="showPage('qr')">
+  Reveal QR code
+</button>
+</div>
+
+
+    <div class="segmented">
+
+
+      <button onclick="showPage('home')">Permit</button>
+
+ <button class="active" onclick="showPage('identity')">Identity</button>
+
+  <button onclick="showPage('age')">Age</button>
+  </a>
+
+</div>
+
+
+    <div class="details">
+      <h2>VERITY L WEETMAN</h2>
+
+      <div class="divider"></div>
+
+      <div class="single">
+        <span>Address</span>
+        <strong>20 LILIAN COURT </strong>
+        <strong>BEAUMARIS VIC 3193</strong>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="single">
+        <span>Signature</span>
+        <img src="veritysign.jpg" alt="Driver Signature" class="signature-image" />
+      </div>
+    </div> <!-- ✅ close .details -->
+
+  </div> <!-- ✅ close .app -->
+  </div>
+
+
+
+
+
+
+
+<!-- age page -->
+  <div id="age" class="page">
+    <div class="app">
+
+    <!-- HEADER -->
+    <header class="top-header">
+      <button class="back" onclick="showPage('homepage')">‹</button>
+      <div class="title">View details</div>
+    </header>
+
+    <!-- REFRESH -->
+    <div class="refresh lastRefreshed"></div>
+
+    <!-- ✅ USE YOUR BANNER + PHOTO EXACTLY -->
+    <!-- RED LICENCE BAR -->
+    <div class="licence-bar">
+      <div>
+        <div class="licence-title">PROBATIONARY DRIVER LICENCE</div>
+        <div class="licence-sub">Victoria Australia</div>
+      </div>
+      <!-- Replace text with image -->
+      <div class="logo">
+        <img src="b7be7c363_image (1),.png" alt="Vicroads Logo" />
+      </div>
+    </div>
+
+    <!-- IMAGE SECTION (REPLACES GREEN BACKGROUND) -->
+   <div class="image-section qr-wrap">
+  <img src="verityphoto.png" alt="Licence QR Section">
+
+  <!-- clickable area on top of the screenshot button -->
+  <button class="qr-hotspot" onclick="showPage('qr')">
+  Reveal QR code
+</button>
+</div>
+
+    
+    <!-- TABS (Age active) -->
+    <div class="segmented">
+      <button onclick="showPage('home')">Permit</button>
+
+       <button onclick="showPage('identity')">Identity</button>
+
+       <button class="active" onclick="showPage('age')">Age</button>
+    </div>
+
+    <!-- AGE CONTENT -->
+    <div class="details">
+      <div class="age-label">Age status</div>
+
+      <div class="age-row">
+        <div class="age-check">✓</div>
+        <div class="age-value">Over 18</div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+<!-- homepage page -->
+
+
+<div id="homepage" class="page">
+    <div class="app">
+
+<div class="app">
+
+ <div class="header">
+  <img src="vicroadlogo.png" alt="Profile" class="header-img">
+  <h2>Hi Verity</h2>
+</div>
+
+
+    
+    <div style="text-decoration:none; color:inherit; display:block;" onclick="showPage('demerit')">
+  <div class="demerit-card">
+    <img src="0d9abd62a_IMG_6900.jpg" alt="Demerit Points" class="demerit-img">
+    <h3 class="demerit-text">Demerit points balance</h3>
+  </div>
+</div>
+
+   <div style="text-decoration:none; color:inherit; display:block;" onclick="showPage('vehicle')">
+      <div class="vehicle-card">
+        <img src="Vechile.jpg" class="vehicle-img">
+        <h3 class="vehicle-text">Registered vehicles</h3>
+      </div>
+    </div>
+
+    
+    
+    <a href="javascript:void(0)" class="licence-link" onclick="showPage('home')">
+  <img src="License button.jpg" alt="My licence" class="licence-btn">
+</a>
+
+    <nav class="nav">
+     <a href="javascript:void(0)" onclick="showPage('homepage')">
+  <img src="home logo.png" class="nav-icon">
+  Home
+</a>
+
+
+
+      <a href="javascript:void(0)" onclick="showPage('vehicles')">
+  <img src="car logo.png" alt="Licence" class="nav-icon">
+  Vehicles
+</a>
+
+      <a href="javascript:void(0)" onclick="showPage('home')">
+  <img src="License logo.png" alt="Licence" class="nav-icon">
+  Licence
+</a>
+
+<a href="javascript:void(0)" onclick="showPage('payment')">
+  <img src="payment logo.png" class="nav-icon">
+  Payment
+</a>
+
+<a href="javascript:void(0)" onclick="showPage('profile')">
+  <img src="profile logo.png" class="nav-icon">
+  Profile
+</a>
+    </nav>
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<!-- demerit page -->
+
+<div id="demerit" class="page">
+    <div class="app">
+
+      <header class="top-header">
+      <button class="back" onclick="showPage('homepage')">‹</button>
+      <div class="title">Demerit points</div>
+    </header>
+
+    <div class="content">
+
+      <div class="balance-card">
+        <div class="balance-title">Current Balance</div>
+
+        <div class="balance-row">
+          <div class="balance-big">0</div>
+          <div class="balance-outof">/ 12</div>
+        </div>
+
+        <div class="balance-sub">demerit points</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Information</div>
+        <div class="card-text">
+          Demerit points are recorded against your licence when you commit certain driving offences.
+          If you accumulate too many points, your licence may be suspended.
+        </div>
+      </div>
+
+      <div class="card white">
+        <div class="card-title">Good driving record</div>
+        <div class="card-text">
+          You currently have 0 demerit points. Keep up the safe driving!
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- vehicle page -->
+
+<div id="vehicle" class="page">
+  <div class="app">
+
+    <header class="top-header">
+      <button class="back" onclick="showPage('homepage')">‹</button>
+      <div class="title">My vehicles</div>
+    </header>
+
+    <div class="empty">
+      <div class="icon-circle">
+        <img src="cas.png" alt="Vehicle icon">
+      </div>
+
+      <h2>No registered vehicles</h2>
+      <p>
+        You don't have any registered vehicles yet.
+        They will appear here once registered.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vehicles" class="page">
+    <div class="app">
+
+      <header class="top-header">
+      <div class="title">Vehicles</div>
+    </header>
+
+    <div class="list">
+
+<a href="vehicles.html" class="list-item">
+        <div class="list-text">
+          <h3>My registered vehicles</h3>
+          <p>View all registered vehicles</p>
+        </div>
+        <img src="tic.png" class="external">
+      </a>
+
+      <a href="#" class="list-item">
+        <div class="list-text">
+          <h3>Manage registration renewal</h3>
+          <p>Renew your registration when it's due</p>
+        </div>
+        <img src="tic.png" class="external">
+      </a>
+
+      <a href="#" class="list-item">
+        <div class="list-text">
+          <h3>Change your garage address</h3>
+        </div>
+        <img src="tic.png" class="external">
+      </a>
+
+      <a href="#" class="list-item">
+        <div class="list-text">
+          <h3>Apprentice registration discount</h3>
+        </div>
+        <img src="tic.png" class="external">
+      </a>
+
+      <a href="#" class="list-item">
+        <div class="list-text">
+          <h3>Unregistered vehicle permits</h3>
+        </div>
+        <img src="tic.png" class="external">
+      </a>
+
+      <a href="#" class="list-item">
+        <div class="list-text">
+          <h3>My vehicle reports</h3>
+        </div>
+        <img src="tic.png" class="external">
+      </a>
+
+    </div>
+
+    <!-- bottom nav -->
+
+    <nav class="nav">
+     <a href="javascript:void(0)" onclick="showPage('homepage')">
+  <img src="home logo.png" class="nav-icon">
+  Home
+</a>
+
+
+
+      <a href="javascript:void(0)" onclick="showPage('vehicles')">
+  <img src="car logo.png" alt="Licence" class="nav-icon">
+  Vehicles
+</a>
+
+      <a href="javascript:void(0)" onclick="showPage('home')">
+  <img src="License logo.png" alt="Licence" class="nav-icon">
+  Licence
+</a>
+
+<a href="javascript:void(0)" onclick="showPage('payment')">
+  <img src="payment logo.png" class="nav-icon">
+  Payment
+</a>
+
+<a href="javascript:void(0)" onclick="showPage('profile')">
+  <img src="profile logo.png" class="nav-icon">
+  Profile
+</a>
+    </nav>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- payment page -->
+
+<div id="payment" class="page">
+    <div class="app">
+
+ <header class="top-header">
+      <div class="title">Payments</div>
+    </header>
+
+    <div class="content">
+      <div class="card">
+
+        <a href="#" class="item">
+          <div class="item-text">
+            <h3>Manage payment methods</h3>
+            <p>Store your credit card and bank account details to make payments</p>
+          </div>
+          <img src="tic.png" class="external">
+        </a>
+
+        <a href="#" class="item">
+          <div class="item-text">
+            <h3>Direct debit payments</h3>
+            <p>Manage direct debit settings</p>
+          </div>
+          <img src="tic.png" class="external">
+        </a>
+
+        <a href="#" class="item">
+          <div class="item-text">
+            <h3>Transaction history</h3>
+            <p>View recent transactions made using your myVicRoads account</p>
+          </div>
+          <img src="tic.png" class="external">
+        </a>
+
+      </div>
+    </div>
+
+    <!-- bottom nav -->
+    <nav class="nav">
+     <a href="javascript:void(0)" onclick="showPage('homepage')">
+  <img src="home logo.png" class="nav-icon">
+  Home
+</a>
+
+
+
+      <a href="javascript:void(0)" onclick="showPage('vehicles')">
+  <img src="car logo.png" alt="Licence" class="nav-icon">
+  Vehicles
+</a>
+
+      <a href="javascript:void(0)" onclick="showPage('home')">
+  <img src="License logo.png" alt="Licence" class="nav-icon">
+  Licence
+</a>
+
+<a href="javascript:void(0)" onclick="showPage('payment')">
+  <img src="payment logo.png" class="nav-icon">
+  Payment
+</a>
+
+<a href="javascript:void(0)" onclick="showPage('profile')">
+  <img src="profile logo.png" class="nav-icon">
+  Profile
+</a>
+    </nav>
+
+  </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- profile page -->
+
+
+<div id="profile" class="page">
+    <div class="app">
+
+      <header class="top-header">
+      <div class="title">Profile</div>
+    </header>
+
+    <div class="content">
+
+      <div class="section">
+        <div class="section-header">Profile and settings</div>
+
+        <a href="#" class="item">
+          <span>Personal information</span>
+          <img src="tic.png" class="chevron">
+        </a>
+
+        <a href="#" class="item">
+          <span>Addresses</span>
+          <img src="tic.png" class="chevron">
+        </a>
+
+        <a href="#" class="item">
+          <span>Security settings</span>
+          <img src="tic.png" class="chevron">
+        </a>
+
+        <a href="#" class="item">
+          <span>Passkey settings</span>
+          <img src="tic.png" class="chevron">
+        </a>
+      </div>
+
+      <div class="section">
+        <div class="section-header">App controls</div>
+
+        <a href="#" class="item">
+          <div>
+            <strong>Biometrics and settings</strong>
+            <p>Enable biometrics and deactivate card or account</p>
+          </div>
+          <img src="tic.png" class="chevron">
+        </a>
+
+        <a href="#" class="item">
+          <span>Help and info</span>
+          <img src="tic.png" class="chevron">
+        </a>
+
+        <a href="#" class="item">
+          <span>Provide app feedback</span>
+          <img src="tic.png" class="chevron">
+        </a>
+      </div>
+
+    </div>
+
+    <!-- bottom nav -->
+   <nav class="nav">
+     <a href="javascript:void(0)" onclick="showPage('homepage')">
+  <img src="home logo.png" class="nav-icon">
+  Home
+</a>
+
+
+
+      <a href="javascript:void(0)" onclick="showPage('vehicles')">
+  <img src="car logo.png" alt="Licence" class="nav-icon">
+  Vehicles
+</a>
+
+      <a href="javascript:void(0)" onclick="showPage('home')">
+  <img src="License logo.png" alt="Licence" class="nav-icon">
+  Licence
+</a>
+
+<a href="javascript:void(0)" onclick="showPage('payment')">
+  <img src="payment logo.png" class="nav-icon">
+  Payment
+</a>
+
+<a href="javascript:void(0)" onclick="showPage('profile')">
+  <img src="profile logo.png" class="nav-icon">
+  Profile
+</a>
+    </nav>
+
+  </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<!-- qr page -->
+
+  <div id="qr" class="page">
+    <div class="app">
+
+      <header class="top">
+      <div class="title">Verify Licence</div>
+      <button class="close" onclick="showPage('home')">
+  Close
+</button>
+    </header>
+
+    <div class="content">
+      <div class="qr-wrap">
+        <div class="qr">
+          <img src="IMG_1375.jpeg" alt="QR Code" id="qrImg">
+
+          <div class="overlay" id="overlay">
+            <div class="loader"></div>
+          </div>
+        </div>
+        </div>
+
+      <div id="overlay"></div>
+<div class="expires">
+  QR expires <span id="timer">02:00</span>
+</div>
+
+      <div class="desc">
+        By presenting this QR code you consent to share some or all of your driver licence information,
+        including with scanners, venues and law enforcement agencies. They may retain your information
+        in accordance with their business practices and legal requirements.
+      </div>
+
+      <div class="sharing-title">You're sharing:</div>
+      <ul>
+        <li>Victorian driver licence photo</li>
+        <li>Full name, birth date and address</li>
+        <li>Licence number, type and expiry date</li>
+        <li>Licence status</li>
+        <li>Proficiency</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+  // start at 2:00
+  
+ 
+let seconds = 120;
+let timerStarted = false;
+let interval = null;
+
+function render() {
+  const el = document.getElementById("timer");
+  if (!el) return;
+
+  const m = String(Math.floor(seconds / 60)).padStart(2, "0");
+  const s = String(seconds % 60).padStart(2, "0");
+  el.textContent = `${m}:${s}`;
+}
+
+function startTimer() {
+  if (timerStarted) return;
+  timerStarted = true;
+
+  interval = setInterval(() => {
+    if (seconds > 0) seconds--;
+    render();
+  }, 1000);
+}
+
+function resetQR() {
+  seconds = 120;
+  timerStarted = false;
+
+  if (interval) clearInterval(interval);
+  interval = null;
+
+  render();
+}
+
+function updateRefreshTime() {
+  const now = new Date();
+  const formatted = now.toLocaleString();
+
+  document.querySelectorAll(".lastRefreshed").forEach(el => {
+    el.textContent = "Last refreshed: " + formatted;
+  });
+}
+
+function updateRefreshTime() {
+  const now = new Date();
+
+  const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  const day = days[now.getDay()];
+  const date = String(now.getDate()).padStart(2, "0");
+  const month = months[now.getMonth()];
+  const year = now.getFullYear();
+
+  let hours = now.getHours();
+  let minutes = String(now.getMinutes()).padStart(2, "0");
+
+  const ampm = hours >= 12 ? "pm" : "am";
+  hours = hours % 12 || 12;
+
+  const formatted = `${day} ${date} ${month} ${year} ${hours}:${minutes}${ampm}`;
+
+  document.querySelectorAll(".lastRefreshed").forEach(el => {
+    el.textContent = "Last refreshed: " + formatted;
+  });
+}
+
+function showPage(pageId) {
+  const pages = document.querySelectorAll(".page");
+  pages.forEach(p => p.style.display = "none");
+
+  const page = document.getElementById(pageId);
+  if (!page) return;
+page.style.display = "block";
+  
+page.style.display = "block";
+
+updateRefreshTime();
+
+  // 🔥 QR LOGIC ONLY RUNS HERE
+  if (pageId === "qr") {
+    resetQR();
+    
+    const overlay = document.getElementById("overlay");
+
+overlay.style.position = "absolute";
+overlay.style.left = "115px";  // X position
+overlay.style.top = "115px";   // Y position
+
+    const expires = document.querySelector(".expires");
+
+    if (overlay) {
+      overlay.style.display = "block";
+      overlay.style.opacity = "1";
+    }
+
+    if (expires) expires.style.opacity = "0";
+
+    setTimeout(() => {
+      if (overlay) overlay.style.opacity = "0";
+
+      setTimeout(() => {
+        if (overlay) overlay.style.display = "none";
+        if (expires) expires.style.opacity = "1";
+
+        // ✅ THIS is the moment blur gets removed
+    const qr = document.querySelector(".qr");
+    if (qr) qr.classList.add("unblur");
+
+
+        startTimer();
+      }, 200);
+
+    }, 3000);
+  }
+}
+
+
+// default page
+showPage("home");
+</script>
+</script>
+</div>
+</body>
+</html>
